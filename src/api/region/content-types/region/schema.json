@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "regions",
+  "info": {
+    "singularName": "region",
+    "pluralName": "regions",
+    "displayName": "Region"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "garbage_collection_dates": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::garbage-collection-date.garbage-collection-date",
+      "mappedBy": "regions"
+    }
+  }
+}
