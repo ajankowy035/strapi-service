@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "garbage_collection_dates",
+  "info": {
+    "singularName": "garbage-collection-date",
+    "pluralName": "garbage-collection-dates",
+    "displayName": "Garbage Collection Dates",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "bins": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::bin.bin",
+      "inversedBy": "garbage_collection_dates"
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::region.region",
+      "inversedBy": "garbage_collection_dates"
+    }
+  }
+}

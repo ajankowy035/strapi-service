@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bins",
+  "info": {
+    "singularName": "bin",
+    "pluralName": "bins",
+    "displayName": "Bin",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "garbage_collection_dates": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::garbage-collection-date.garbage-collection-date",
+      "mappedBy": "bins"
+    }
+  }
+}
