@@ -12,12 +12,11 @@ permissions:
 
 jobs:
   build:
+    environment: dev
     name: Build Image
     runs-on: ubuntu-latest
 
     steps:
-      - name: echo
-        run: echo  ${{ secrets.AWS_ACCESS_KEY_ID }}
       - name: Check out code
         uses: actions/checkout@v2
 
