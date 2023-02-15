@@ -8,5 +8,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Build strapi
-        run: docker build . --file Dockerfile.prod --tag strapi-service:$(date +%s)
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build Strapi-service
+        run: yarn build
+        env:
+          NODE_ENV: production
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: |
+            srv/dist
