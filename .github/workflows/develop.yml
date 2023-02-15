@@ -31,13 +31,14 @@ jobs:
           aws-region: eu-central-1
 
       - name: Login to Amazon ECR
-        id: strapi-service
+        id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: strapidev
+          IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build --tag demo . --file Dockerfile.prod
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . --file Dockerfile.prod
           docker push demo
