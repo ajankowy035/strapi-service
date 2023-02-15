@@ -34,7 +34,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: strapidev
-          IMAGE_TAG: strapi-service:$(date +%s)
+          IMAGE_TAG: strapi-service
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . --file Dockerfile.prod
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
