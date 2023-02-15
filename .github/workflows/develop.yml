@@ -6,6 +6,10 @@ on:
       - develop
       - feat/deploy
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     name: Build Image
