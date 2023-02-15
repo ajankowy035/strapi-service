@@ -1,5 +1,9 @@
 name: Strapi-service
 
+on:
+  label:
+    types: [created, edited]
+
 jobs:
   build:
     runs-on: ubuntu-latest
