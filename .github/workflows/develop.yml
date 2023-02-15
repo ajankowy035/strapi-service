@@ -36,5 +36,5 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: strapidev
         run: |
-          docker build --tag $ECR_REGISTRY/$ECR_REPOSITORY:$CI_COMMIT_SHA . --file Dockerfile.prod
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$CI_COMMIT_SHA
+          docker build --tag demo . --file Dockerfile.prod
+          docker push demo
