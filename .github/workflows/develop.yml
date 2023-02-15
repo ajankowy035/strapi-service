@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: set up docker
+        uses: docker/build-push-action@v2
+
       - name: Check out code
         uses: actions/checkout@v2
 
