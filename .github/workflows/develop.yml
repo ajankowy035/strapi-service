@@ -23,7 +23,7 @@ jobs:
           aws-region: eu-central-1
 
       - name: Login to Amazon ECR
-        id: 561944105665.dkr.ecr.eu-central-1.amazonaws.com/strapidev
+        id: strapi-service
         uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
