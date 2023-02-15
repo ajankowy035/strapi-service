@@ -1,9 +1,6 @@
 name: Strapi-service
 
-on:
-  push:
-    branches:
-      - "*"
+on: push
 
 jobs:
   build:
