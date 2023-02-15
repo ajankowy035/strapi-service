@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build docker image
-        run: docker build . --file Dockerfile.prod --tag strapi-service:$(date +%s)
       - name: Checkout the files
         uses: actions/checkout@v2
+      - name: Build docker image
+        run: docker build . --file Dockerfile.prod --tag strapi-service:$(date +%s)
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:
